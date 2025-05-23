@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Entry Data dengan Tailwind CSS</title>
+    <link href="../../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen p-6">
+    <div class="max-w-4xl mx-auto">
+<!-- Toggle Dark Mode -->
+        <div class="flex justify-end mb-4">
+            <button id="darkModeToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center space-x-2">
+                <span class="dark:hidden">🌙</span>
+                <span class="hidden dark:block">☀️</span>
+                <span class="dark:hidden">Dark Mode</span>
+                <span class="hidden dark:block">Light Mode</span>
+            </button>
+        </div>
+
+<!-- Form Entry Card -->
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-8 mb-4 transition-colors duration-300">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Form Entry Data</h2>
+
+            <form>
+<!-- Personal Information Section -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">
+                        Informasi Pribadi
+                    </h3>
+
+<!-- Two Columns Layout for Name -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<!-- First Name -->
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="firstName">
+                                Nama Depan <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                                id="firstName"
+                                type="text"
+                                placeholder="John"
+                                required
+                            >
+                        </div>
+
+<!-- Last Name -->
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="lastName">
+                                Nama Belakang
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                                id="lastName"
+                                type="text"
+                                placeholder="Doe"
+                            >
+                        </div>
+                    </div>
+
+<!-- Email -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="email">
+                            Email <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                            id="email"
+                            type="email"
+                            placeholder="johndoe@example.com"
+                            required
+                        >
+                    </div>
+
+<!-- Phone Number -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="phone">
+                            Nomor Telepon
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                            id="phone"
+                            type="tel"
+                            placeholder="+62 812-3456-7890"
+                        >
+                    </div>
+
+<!-- Date of Birth -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="dob">
+                            Tanggal Lahir
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                            id="dob"
+                            type="date"
+                        >
+                    </div>
+
+<!-- Gender Selection (Radio Buttons) -->
+                    <div class="mb-4">
+                        <span class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">
+                            Jenis Kelamin
+                        </span>
+                        <div class="flex space-x-4">
+                            <div class="flex items-center">
+                                <input
+                                    id="male"
+                                    type="radio"
+                                    name="gender"
+                                    value="male"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                >
+                                <label for="male" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Laki-laki
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input
+                                    id="female"
+                                    type="radio"
+                                    name="gender"
+                                    value="female"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                >
+                                <label for="female" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Perempuan
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input
+                                    id="other"
+                                    type="radio"
+                                    name="gender"
+                                    value="other"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                >
+                                <label for="other" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Lainnya
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Address Section -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">
+                        Alamat
+                    </h3>
+
+<!-- Street Address -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="streetAddress">
+                            Alamat Jalan
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                            id="streetAddress"
+                            type="text"
+                            placeholder="Jl. Contoh No. 123"
+                        >
+                    </div>
+
+<!-- City, Province, and Postal Code in One Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+<!-- City -->
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="city">
+                                Kota
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                                id="city"
+                                type="text"
+                                placeholder="Jakarta"
+                            >
+                        </div>
+
+<!-- Province/State -->
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="province">
+                                Provinsi
+                            </label>
+                            <select
+                                class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                                id="province"
+                            >
+                                <option value="">Pilih Provinsi</option>
+                                <option value="dki_jakarta">DKI Jakarta</option>
+                                <option value="jawa_barat">Jawa Barat</option>
+                                <option value="jawa_tengah">Jawa Tengah</option>
+                                <option value="jawa_timur">Jawa Timur</option>
+                                <option value="bali">Bali</option>
+<!-- Tambahkan provinsi lainnya sesuai kebutuhan -->
+                            </select>
+                        </div>
+
+<!-- Postal Code -->
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="postalCode">
+                                Kode Pos
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                                id="postalCode"
+                                type="text"
+                                placeholder="12345"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+<!-- Additional Information Section -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">
+                        Informasi Tambahan
+                    </h3>
+
+<!-- Occupation -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="occupation">
+                            Pekerjaan
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                            id="occupation"
+                            type="text"
+                            placeholder="Software Developer"
+                        >
+                    </div>
+
+<!-- Income Range (Range Slider) -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="incomeRange">
+                            Kisaran Pendapatan (Juta Rupiah)
+                        </label>
+                        <input
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="25"
+                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                            id="incomeRange"
+                        >
+                        <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400 mt-1">
+                            <span>0</span>
+                            <span>25</span>
+                            <span>50</span>
+                            <span>75</span>
+                            <span>100+</span>
+                        </div>
+                    </div>
+
+<!-- Skills (Multiple Checkboxes) -->
+                    <div class="mb-4">
+                        <span class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">
+                            Keahlian
+                        </span>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <div class="flex items-center">
+                                <input
+                                    id="html"
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="html"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                >
+                                <label for="html" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    HTML
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input
+                                    id="css"
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="css"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                >
+                                <label for="css" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    CSS
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input
+                                    id="javascript"
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="javascript"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                >
+                                <label for="javascript" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    JavaScript
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input
+                                    id="php"
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="php"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                >
+                                <label for="php" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    PHP
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input
+                                    id="python"
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="python"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                >
+                                <label for="python" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Python
+                                </label>
+                            </div>
+                            <div class="flex items-center">
+                                <input
+                                    id="java"
+                                    type="checkbox"
+                                    name="skills[]"
+                                    value="java"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                >
+                                <label for="java" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Java
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- Profile Picture Upload -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="profilePicture">
+                            Foto Profil
+                        </label>
+                        <div class="flex items-center justify-center w-full">
+                            <label for="profilePicture" class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600">
+                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                                    </svg>
+                                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Klik untuk upload</span> atau drag and drop</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG atau GIF (Maks. 2MB)</p>
+                                </div>
+                                <input id="profilePicture" type="file" class="hidden" accept="image/*" />
+                            </label>
+                        </div>
+                    </div>
+
+<!-- Bio (Textarea) -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="bio">
+                            Biografi
+                        </label>
+                        <textarea
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:border-gray-600 dark:bg-gray-700"
+                            id="bio"
+                            rows="4"
+                            placeholder="Ceritakan tentang diri Anda..."
+                        ></textarea>
+                    </div>
+                </div>
+
+<!-- Terms and Conditions Checkbox -->
+                <div class="mb-6">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input
+                                id="terms"
+                                type="checkbox"
+                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-400 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600"
+                                required
+                            >
+                        </div>
+                        <label for="terms" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                            Saya setuju dengan <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">syarat dan ketentuan</a> yang berlaku
+                        </label>
+                    </div>
+                </div>
+
+<!-- Submit Button -->
+                <div class="flex items-center justify-between">
+                    <button
+                        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors duration-300"
+                        type="submit"
+                    >
+                        Submit Data
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+// Script untuk toggle dark mode
+        const darkModeToggle = document.getElementById('darkModeToggle');
+
+// Cek preferensi dark mode dari localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark');
+        }
+
+// Event listener untuk toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+
+// Simpan preferensi ke localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', null);
+            }
+        });
+    </script>
+</body>
+</html>
